@@ -17,12 +17,12 @@ export default function HistoryPage() {
     if (user) getTransactions(user.id).then(setTransactions);
   }, []);
 
-  if (!user) return <Navigate to="/login" replace />;
-
   const tags = useMemo(
     () => Array.from(new Set(transactions.map(t => t.label).filter(Boolean))),
     [transactions]
   );
+
+  if (!user) return <Navigate to="/login" replace />;
 
   const filtered = transactions.filter(t => {
     const typeMatch =
