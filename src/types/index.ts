@@ -37,3 +37,26 @@ export interface GroupExpense {
   splitAmong: string[]; // user IDs
   date: string;
 }
+
+export interface RecurringPayment {
+  id: string;
+  fromId: string;
+  toId: string;
+  toName: string;
+  amount: number;
+  label: string;
+  frequency: 'weekly' | 'monthly';
+  nextRunAt: string; // ISO date
+  active: boolean;
+}
+
+export interface PaymentLink {
+  id: string;
+  token: string;
+  creatorId: string;
+  creatorName: string;
+  amount: number;
+  description: string;
+  payCount: number;
+  createdAt: string;
+}

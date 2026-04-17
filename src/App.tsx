@@ -11,6 +11,9 @@ import AddFundsPage from "./pages/AddFundsPage";
 import SendMoneyPage from "./pages/SendMoneyPage";
 import HistoryPage from "./pages/HistoryPage";
 import GroupsPage from "./pages/GroupsPage";
+import RecurringPage from "./pages/RecurringPage";
+import LinksPage from "./pages/LinksPage";
+import PayLinkPage from "./pages/PayLinkPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +33,9 @@ const App = () => (
             <Route path="/send" element={<SendMoneyPage />} />
             <Route path="/history" element={<HistoryPage />} />
             <Route path="/groups" element={<GroupsPage />} />
+            <Route path="/recurring" element={<RecurringPage />} />
+            <Route path="/links" element={<LinksPage />} />
+            <Route path="/pay/:token" element={<PayLinkPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>
