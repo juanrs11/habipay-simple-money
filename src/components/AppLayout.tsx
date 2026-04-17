@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, History, Users, LogOut } from 'lucide-react';
+import { Home, History, Users, LogOut, Repeat, Link2 } from 'lucide-react';
 
 export default function AppLayout({ children }: { children: ReactNode }) {
   const { logout } = useAuth();
@@ -11,6 +11,8 @@ export default function AppLayout({ children }: { children: ReactNode }) {
     { to: '/', icon: Home, label: 'Home' },
     { to: '/history', icon: History, label: 'History' },
     { to: '/groups', icon: Users, label: 'Groups' },
+    { to: '/recurring', icon: Repeat, label: 'Recurring' },
+    { to: '/links', icon: Link2, label: 'Links' },
   ];
 
   return (
@@ -32,7 +34,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
               <Link
                 key={item.to}
                 to={item.to}
-                className={`flex flex-col items-center gap-0.5 py-2 px-4 text-xs font-medium transition ${active ? 'text-primary' : 'text-muted-foreground hover:text-foreground'}`}
+                className={`flex flex-col items-center gap-0.5 py-2 px-2 text-[11px] font-medium transition ${active ? 'text-primary' : 'text-muted-foreground hover:text-foreground'}`}
               >
                 <item.icon className="h-5 w-5" />
                 {item.label}
